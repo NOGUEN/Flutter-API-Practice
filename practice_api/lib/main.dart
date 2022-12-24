@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'view/login_home.dart';
+
 void main() {
   runApp(const PracticeAPI());
 }
@@ -14,19 +16,5 @@ class PracticeAPI extends StatelessWidget {
       title: 'Login Feature',
       home: LoginHome(),
     );
-  }
-}
-
-class LoginHome extends StatefulWidget {
-  const LoginHome({super.key});
-
-  @override
-  State<LoginHome> createState() => _LoginHomeState();
-}
-
-class _LoginHomeState extends State<LoginHome> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
