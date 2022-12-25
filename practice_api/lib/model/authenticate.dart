@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'authenticate.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class authenticateModel {
   final String phone;
   final String code;
