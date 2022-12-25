@@ -25,8 +25,7 @@ Widget loginHomeScaffold() {
 }
 
 Widget loginHomeColumn() {
-  final TextEditingController idController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController phoneNumberController = TextEditingController();
 
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
@@ -39,24 +38,36 @@ Widget loginHomeColumn() {
             fontWeight: FontWeight.bold,
           ),
         ),
-        customTextField(idController, 'ID'),
-        customTextField(passwordController, 'Password'),
+        phoneNumberTextField(phoneNumberController),
+        const SizedBox(height: 20),
+        GestureDetector(
+          onTap: () {},
+          child: Container(
+            height: 40,
+            width: double.infinity,
+            padding: const EdgeInsets.all(8.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8.0),
+              color: Colors.blue,
+            ),
+            child: const Center(
+              child: Text('인증하기'),
+            ),
+          ),
+        ),
       ],
     ),
   );
 }
 
-Widget customTextField(
-  TextEditingController controller,
-  String textForHint,
-) {
+Widget phoneNumberTextField(TextEditingController controller) {
   return TextField(
     controller: controller,
     onSubmitted: tapPasswordTextField,
     onChanged: checkIdTextField,
-    decoration: InputDecoration(
-      hintText: textForHint,
-      border: const OutlineInputBorder(),
+    decoration: const InputDecoration(
+      hintText: '휴대폰 번호를 입력하세요.',
+      border: OutlineInputBorder(),
     ),
   );
 }
