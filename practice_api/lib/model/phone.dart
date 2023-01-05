@@ -2,14 +2,14 @@ import 'package:json_annotation/json_annotation.dart';
 part 'phone.g.dart';
 
 @JsonSerializable()
-class phoneModel {
+class PhoneModel {
   final String phone;
 
-  phoneModel({
+  PhoneModel({
     required this.phone,
   });
 
-  factory phoneModel.fromJson(Map<String, dynamic> json) =>
-      _$phoneModelFromJson(json);
-  Map<String, dynamic> toJson() => _$phoneModelToJson(this);
+  factory PhoneModel.fromJson(Map<String, dynamic> json) =>
+      _$PhoneModelFromJson(json);
+  Map<String, dynamic> toJson() => _$PhoneModelToJson(this);
 }

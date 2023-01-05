@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:practice_api/controller/login_controller.dart';
+import 'package:get/get.dart';
+import 'package:practice_api/view/code_check_view.dart';
 
 class LoginHome extends StatefulWidget {
   const LoginHome({super.key});
@@ -26,6 +29,7 @@ Widget loginHomeScaffold() {
 
 Widget loginHomeColumn() {
   final TextEditingController phoneNumberController = TextEditingController();
+  LoginController loginController = Get.put(LoginController());
 
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
@@ -41,7 +45,17 @@ Widget loginHomeColumn() {
         phoneNumberTextField(phoneNumberController),
         const SizedBox(height: 20),
         GestureDetector(
-          onTap: () {},
+          onTap: () async {
+            loginController
+                .authentication(phoneNumber: phoneNumberController.text)
+                .then((value) {
+              Get.off(
+                CodeCheckView(
+                  phoneNumber: phoneNumberController.text,
+                ),
+              );
+            });
+          },
           child: Container(
             height: 40,
             width: double.infinity,
