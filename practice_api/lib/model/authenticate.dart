@@ -2,16 +2,16 @@ import 'package:json_annotation/json_annotation.dart';
 part 'authenticate.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class authenticateModel {
+class AuthenticateModel {
   final String phone;
   final String code;
 
-  authenticateModel({
+  AuthenticateModel({
     required this.phone,
     required this.code,
   });
 
-  factory authenticateModel.fromJson(Map<String, dynamic> json) =>
-      _$authenticateModelFromJson(json);
-  Map<String, dynamic> toJson() => _$authenticateModelToJson(this);
+  factory AuthenticateModel.fromJson(Map<String, dynamic> json) =>
+      _$AuthenticateModelFromJson(json);
+  Map<String, dynamic> toJson() => _$AuthenticateModelToJson(this);
 }

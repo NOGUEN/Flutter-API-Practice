@@ -6,11 +6,11 @@ part of 'phone.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-phoneModel _$phoneModelFromJson(Map<String, dynamic> json) => phoneModel(
+PhoneModel _$PhoneModelFromJson(Map<String, dynamic> json) => PhoneModel(
       phone: json['phone'] as String,
     );
 
-Map<String, dynamic> _$phoneModelToJson(phoneModel instance) =>
+Map<String, dynamic> _$PhoneModelToJson(PhoneModel instance) =>
     <String, dynamic>{
       'phone': instance.phone,
     };
