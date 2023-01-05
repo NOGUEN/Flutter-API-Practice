@@ -8,12 +8,13 @@ class AuthService {
 
   Future<bool> authenticate({required String phoneNumber}) async {
     try {
-      final response = await Dio().post(
-        "$baseUrl",
+      final Response response = await Dio().post(
+        baseUrl,
         data: {
           "auth": phoneModel(phone: phoneNumber).toJson(),
         },
       );
+      print(phoneModel(phone: phoneNumber).toJson());
       return response.data["status"] == 'ok';
     } catch (e) {
       return false;
@@ -25,7 +26,7 @@ class AuthService {
     required String code,
   }) async {
     try {
-      final response = await Dio().get(
+      final Response response = await Dio().get(
         baseUrl,
         queryParameters: {
           "auth": authenticateModel(phone: phoneNumber, code: code).toJson(),
