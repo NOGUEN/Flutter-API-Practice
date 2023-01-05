@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'view/login_home.dart';
+import 'view/login_home_page.dart';
 
 void main() {
   runApp(const PracticeAPI());

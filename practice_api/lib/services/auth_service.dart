@@ -11,15 +11,15 @@ class AuthService {
       final Response response = await Dio().post(
         baseUrl,
         data: {
-          "auth": phoneModel(phone: phoneNumber).toJson(),
+          "auth": PhoneModel(phone: phoneNumber).toJson(),
         },
       );
-      print(phoneModel(phone: phoneNumber).toJson());
       return response.data["status"] == 'ok';
     } catch (e) {
       return false;
     }
   }
+
 
   Future<bool> checkCode({
     required String phoneNumber,
@@ -29,7 +29,7 @@ class AuthService {
       final Response response = await Dio().get(
         baseUrl,
         queryParameters: {
-          "auth": authenticateModel(phone: phoneNumber, code: code).toJson(),
+          "auth": AuthenticateModel(phone: phoneNumber, code: code).toJson(),
         },
       );
       return response.data["result"]["verify"] == "ok";

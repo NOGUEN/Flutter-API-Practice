@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:practice_api/controller/login_controller.dart';
-import 'package:practice_api/view/login_home.dart';
 import 'package:practice_api/view/home_view.dart';
 
 import 'package:get/get.dart';
